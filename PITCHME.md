@@ -61,8 +61,22 @@ As the root node is always present, you are always in a container, even if you d
 +++
 
 ```
-Code here?
-Blub!
+cpu                     memory
+|--- background         |--- 27
+|    |--- cron          |--- 785
+|    |    |-- 27        |--- 56
+|    |--- monitoring    |--- 57
+|         |-- 785       |--- 58
+|--- foreground         |--- databases
+     |--- nginx              |-- 854
+     |    |-- 56             |-- 1563
+     |    |-- 57
+     |    |-- 58
+     |--- postgres
+          |-- 854
+     |--- redis
+          |-- 1563
+  
 ```
 
 +++
