@@ -46,6 +46,19 @@ Instead, there are other mechanisms at play.
 
 
 +++
+# cgroups (control groups)
+
++++
+### Subsystem for resource control
+
+ - CPU, memory, block I/O, ...
+ - each resource type has its own hierarchy
+ - each node is a group of processes
+ - per default, all processes start at the root node
+
+The last point also means, you are always in a container, even if you don't use it!
+
++++
 # Namespaces
 
  - Used to separate resources from each other
@@ -72,8 +85,6 @@ Instead, there are other mechanisms at play.
  - separate network resources from each other
  - have their own virtual ethernet interfaces
 
-+++
-# cgroups (control groups)
 
 ---
 
