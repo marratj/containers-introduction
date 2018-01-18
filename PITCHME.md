@@ -116,7 +116,8 @@ There are other cgroups, like block I/O, devices, freezer, but the most "visible
 ### Network namespaces
 
  - separate network resources from each other
- - have their own virtual ethernet interfaces
+ - have their own virtual eth0 interfaces (vethXXXX on the host)
+ - own routing tables, own iptables rule
  - localhost is within the namespace, no longer on the complete host
 
 +++
@@ -125,8 +126,95 @@ There are other cgroups, like block I/O, devices, freezer, but the most "visible
 
  - chroot (but better)
  - cannot see the filesystem outside the namespace
+ - processes have their own private rootfs & other mounts
+
+---
+
+# Quick Namespace Demo
+
+Note:
+
+```
+unshare --pid --fork bash
+
+ps -A   # what??? still all the PIDs?
+# try killing a process (and show it doesn't work)
+
+mount -t proc proc /proc
+```
 
 
+---
+# Container runtimes
+
++++
+
+## LXC
+
+ - set of userland tools
+ - create a root filesystem with a whole OS inside (sans kernel)
+ - "system" containers - intended to behave like a VM
+ - advanced features nowadays, like live migration between hosts
+ - Google Cloud actually uses LXC containers for its IaaS Linux instances
+
++++
+
+## Docker Engine
+
+ - the most obvious one
+ - "application" containers - usually one application per container, not a whole OS
+ - provides advanced features like image & build management
+
++++
+
+## rkt
+
+ - slim engine
+ - focus on just executing containers
+ - no image management, etc...
+
+---
+
+## Container Storage
+
+Containers use CoW (Copy-on-Write) Storage
+
+ - base image from which container gets started
+ - all changes that happen in the container are done in a delta FS
+   - AUFS
+   - device-mapper
+   - OverlayFS
+   - btrfs
+
++++
+
+Container images contain everything that an application needs
+
+ - OS dependencies (basic libraries)
+ - application frameworks
+ - application binaries themselves
+
+You could see a Docker image essentially as a packaging format with the big plus of portability!
+
++++
+
+But not
+
+ - configuration files
+ - secrets
+
+You wouldn't want your portable app image to leak your config & secrets between environments, much less outside the company!
+
++++
+
+When the container is removed, all changes are gone.
+
+So, how do we persist storage and get configuration inside, then?
+
++++
+
+External volumes & environment variables
+ 
 
 ---
 
