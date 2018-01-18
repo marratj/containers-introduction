@@ -173,9 +173,11 @@ mount -t proc proc /proc
 
 ---
 
-## Container Storage
+# Container Storage
 
-Containers use CoW (Copy-on-Write) Storage
++++
+
+### Containers use CoW (Copy-on-Write) Storage
 
  - base image from which container gets started
  - all changes that happen in the container are done in a delta FS
@@ -186,7 +188,7 @@ Containers use CoW (Copy-on-Write) Storage
 
 +++
 
-Container images contain everything that an application needs
+### Container images contain everything that an application needs
 
  - OS dependencies (basic libraries)
  - application frameworks
