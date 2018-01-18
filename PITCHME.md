@@ -77,7 +77,19 @@ cpu                     memory
      |--- redis
           |-- 1563
   
+
 ```
++++
+### cgroup controls how many resources can be consumed by each node
+
+e.g.
+
+ - memory cgroup `database` is allowed to take 512MB of memory
+ - CPU cgroup `foreground` is allowed to take 1.5 CPU shares
+
++++
+
+There are other cgroups, like block I/O, devices, freezer, but the most "visible" thing when getting into container-land are not cgroups, but
 
 +++
 # Namespaces
