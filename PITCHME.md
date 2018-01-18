@@ -94,13 +94,14 @@ There are other cgroups, like block I/O, devices, freezer, but the most "visible
 +++
 # Namespaces
 
- - Used to separate resources from each other
-
- - Each resource only sees other resources if they are in the same namespace
+ - used to separate resources from each other
+ - each resource only sees other resources if they are in the same namespace
+ - everything outside its namespace doesn't exist for a process; 
+    notwithstanding Meltdown and Spectre ;-)
 
 +++
 
-## Types of Namespaces
+## Some Types of Namespaces
 
 +++
 
@@ -117,6 +118,15 @@ There are other cgroups, like block I/O, devices, freezer, but the most "visible
 
  - separate network resources from each other
  - have their own virtual ethernet interfaces
+ - localhost is within the namespace, no longer on the complete host
+
++++
+
+### Mount namespaces
+
+ - chroot (but better)
+ - cannot see the filesystem outside the namespace
+
 
 
 ---
