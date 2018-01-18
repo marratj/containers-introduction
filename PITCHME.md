@@ -2,9 +2,9 @@
 
 ---
 
-### What is/does a container?
+## What is/does a container?
 
-Some kind of 
+### Some kind of 
 
  - "lightweight" VM?
  - separate runtime environment?
@@ -13,7 +13,7 @@ Some kind of
 
 +++
 
-Actually can feel like an own VM
+### Actually can feel like an own VM
 
  - can run its own processes
  - you can SSH into it (if sshd is running)
@@ -21,7 +21,7 @@ Actually can feel like an own VM
 
 +++
 
-But it does
+### But it does
 
  - not have an own OS kernel
  - not need an own init system
