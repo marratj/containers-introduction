@@ -134,14 +134,12 @@ There are other cgroups, like block I/O, devices, freezer, but the most "visible
 
 Note:
 
-```
 unshare --pid --fork bash
 
 ps -A   # what??? still all the PIDs?
 # try killing a process (and show it doesn't work)
 
 mount -t proc proc /proc
-```
 
 
 ---
