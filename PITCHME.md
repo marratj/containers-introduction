@@ -24,12 +24,19 @@
 
 +++
 
-### PID namespace
+### PID namespaces
 
- - process id namespace
+ - process ids
  - each process only sees other process in the same pid namespace
  - the first process in a namespace has pid 1 (similar to init)
  - however that same process has a different pid in the root namespace
+
++++
+
+### Network namespaces
+
+ - separate network resources from each other
+ - have their own virtual ethernet interfaces
 
 +++
 # cgroups (control groups)
