@@ -130,7 +130,7 @@ There are other cgroups, like block I/O, devices, freezer, but the most "visible
 
 ---
 
-# Quick Namespace Demo
+Quick Namespace Demo
 
 Note:
 
