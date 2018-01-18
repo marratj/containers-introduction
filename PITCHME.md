@@ -198,7 +198,7 @@ You could see a Docker image essentially as a packaging format with the big plus
 
 +++
 
-But not
+### But not
 
  - configuration files
  - secrets
@@ -207,7 +207,7 @@ You wouldn't want your portable app image to leak your config & secrets between 
 
 +++
 
-When the container is removed, all changes are gone.
+When a container is removed, all its changes are gone.
 
 So, how do we persist storage and get configuration inside, then?
 
@@ -215,6 +215,25 @@ So, how do we persist storage and get configuration inside, then?
 
 External volumes & environment variables
  
+```
+docker run -d --name http -e TEST=new -v /tmp/nginx:/usr/share/nginx/html:ro -p 8080:80 nginx
+```
+
+---
+
+# Bonus
+
++++
+
+### "Old-school" enterprise applications and containers
+
+Does that work?
+
++++
+
+# Oh yeah!
+
+
 
 ---
 
