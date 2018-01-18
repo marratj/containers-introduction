@@ -96,8 +96,7 @@ There are other cgroups, like block I/O, devices, freezer, but the most "visible
 
  - used to separate resources from each other
  - each resource only sees other resources if they are in the same namespace
- - everything outside its namespace doesn't exist for a process; 
-    notwithstanding Meltdown and Spectre ;-)
+ - everything outside its namespace doesn't exist for a process (if you disregard Meltdown and Spectre ;-))
 
 +++
 
