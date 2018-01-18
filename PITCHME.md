@@ -56,7 +56,14 @@ Instead, there are other mechanisms at play.
  - each node is a group of processes
  - per default, all processes start at the root node
 
-The last point also means, you are always in a container, even if you don't use it!
+As the root node is always present, you are always in a container, even if you don't use containers!
+
++++
+
+```
+Code here?
+Blub!
+```
 
 +++
 # Namespaces
