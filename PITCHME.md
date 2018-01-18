@@ -10,14 +10,13 @@
 
 ### Instead, in Linux, there are the concepts of 
 
-@fa(arrow-down)
 
 +++
 # Namespaces
 
-### Used to separate resources from each other
+ - Used to separate resources from each other
 
-Each resource only sees other resources if they are in the same namespace
+ - Each resource only sees other resources if they are in the same namespace
 
 +++
 
