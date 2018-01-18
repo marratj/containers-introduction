@@ -2,6 +2,40 @@
 
 ---
 
+### What is/does a container?
+
+Some kind of 
+
+ - "lightweight" VM?
+ - separate runtime environment?
+ - package format?
+ - a better chroot?
+
++++
+
+Actually can feel like an own VM
+
+ - can run its own processes
+ - you can SSH into it (if sshd is running)
+ - processes in a container usually cannot look outside
+
++++
+
+But it does
+
+ - not have an own OS kernel
+ - not need an own init system
+ - not use hardware isolation
+
++++
+
+Instead, there are other mechanisms at play.
+
+---
+
+
+
+
 ### There are no containers!
 
 @[1](At least not in the Linux kernel.)
