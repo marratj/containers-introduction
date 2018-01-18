@@ -8,4 +8,11 @@
 
 ---
 
+### Instead, in Linux, there are the concepts of 
+
+@[1](Namespaces)
+@[2](cgroups \(control groups\))
+
+---
+
 # Thank you!
